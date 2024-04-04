@@ -1,3 +1,8 @@
 
-print(min([1, 2, 3, 4 ,5 ]))
-print('я добавил сюда новую запись')
+from requests_html import HTMLSession   
+
+session = HTMLSession()
+response = session.get("https://react-amazon-bestsellers-books-dy.netlify.app/")
+response.html.render()
+
+print(response.html)
